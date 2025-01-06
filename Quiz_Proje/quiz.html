@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Platformu</title>
+    <style>
+        body {
+            font-family: 'Arial, sans-serif';
+            margin: 0; /* Tüm tarayıcı varsayılan dış boşluklarını sıfırlar */
+            padding: 0; /* Tüm tarayıcı varsayılan iç boşluklarını sıfırlar */
+            background-image: url('arkaplan.jpg');
+            background-size: cover;  /* Arka plan resminin kapsayıcı alana yayılmasını sağlar */
+            background-position: center; 
+            background-repeat: no-repeat;
+            display: flex; /* Esnek bir düzen kullanır (flexbox) */
+            justify-content: center; /* İçerikleri yatay olarak ortalar */
+            align-items: center; /* İçerikleri dikey olarak ortalar */
+            height: 100vh; /* Sayfa yüksekliğini görüntüleme alanının tamamı yapar */
+            flex-direction: column; /* Flex öğelerin üst üste dizilmesini sağlar (dikey düzen) */
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: space-around; /* İçerikleri yatay olarak aralarında eşit boşluk bırakacak şekilde hizalar */
+            flex-wrap: wrap;  /* Elemanların kapsayıcı genişliğine sığmaması durumunda bir alt satıra geçmesini sağlar */
+            width: 80%; /* Kapsayıcı genişliğini, görüntüleme alanının %80'i olarak ayarlar */
+            margin-bottom: 20px; /* Alt tarafta 20 piksel boşluk bırakır */
+        }
+
+        .category {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer; /* Bu öğenin üzerine gelindiğinde fare imlecini tıklanabilir (el şeklinde) bir görünüme değiştirir */
+            transition: transform 0.3s, background 0.3s; /* 'transform' ve 'background' özelliklerinin değişimi sırasında 0.3 saniyelik yumuşak bir geçiş sağlar */
+        }
+
+        /* Kategori arka planları*/
+        .category[data-category="bilim"] {
+            background-image: url('bilim.jpg');
+        }
+
+        .category[data-category="spor"] {
+            background-image: url('spor.jpg');
+        }
+
+        .category[data-category="coğrafya"] {
+            background-image: url('cografya.jpg');
+        }
+
+        .category[data-category="tarih"] {
+            background-image: url('tarih.png');
+        }
+
+        .category[data-category="sanat"] {
+            background-image: url('sanat.jpg');
+        }
+
+        .category[data-category="sinema"] {
+            background-image: url('sinema.jpg');
+        }
+
+        .category:hover {
+            transform: scale(1.1); /* Hover durumunda boyut büyütülüyor */
+            background: #382251;
+        }
+
+        .quiz-container {
+            background: white;
+            padding: 20px;  /* Konteynerin etrafına iç boşluk ekler */
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            display: none; /* Başlangıçta gizli yapar */
+        }
+        
+        /* Soru metni için stil */
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Seçenekler listesinin stilini ayarlar */
+        .options {
+            list-style: none;  /* Liste işaretlerini kaldır*/
+            padding: 0;
+        }
+        
+        /* Seçeneklerin her birinin stilini belirler */
+        .options li {
+            margin: 10px 0; /*Seçenekler arası boşluk*/
+            text-align: left;
+            padding: 10px;
+            border-radius: 5px;
+            /* margin: 5px 0; */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        /* Radio input'larını gizler, sadece etiketleri gösterir */
+        .options input[type="radio"] {
+            display: none;
+        }
+        
+        /* Seçeneklerin etiketinin stilini ayarlıyoruz */
+        .options label {
+            display: block;
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            cursor: pointer;
+            background: white;
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        /* Radio butonu seçildiğinde etiketin stilini değiştiriyoruz */
+        .options input[type="radio"]:checked+label {
+            background: #007BFF;
+            color: white;
+        }
+
+        .options li.correct {
+            background-color: green !important;
+            color: white !important;
+        }
+
+        .options li.incorrect {
+            background-color: red !important;
+            color: white !important;
+        }
+
+
+
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .timer {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        /* Quiz başlığının genel stilini belirler */
+        .quiz-header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 60px; /* Başlık ile içerik arasında boşluk */
+            margin-top: -60px;
+        }
+
+        .quiz-header h1 {
+            font-size: 60px;
+            color: #fff;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.6), 0 0 5px rgba(255, 255, 255, 0.6);
+            /* 3D etkisi */
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="quiz-header">
+        <h1>QUİZ</h1> <!-- Başlık ekleyin -->
+    </div>
+    <div class="category-container">
+        <div class="category" data-category="bilim">Bilim</div>
+        <div class="category" data-category="spor">Spor</div>
+        <div class="category" data-category="coğrafya">Coğrafya</div>
+        <div class="category" data-category="tarih">Tarih</div>
+        <div class="category" data-category="sanat">Sanat</div>
+        <div class="category" data-category="sinema">Sinema</div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="timer"></div>
+        <div class="question"></div>
+        <ul class="options"></ul>
+        <button id="next-btn">Sonraki</button>
+
+
+    </div>
+
+    <script>
+        let questions = [];
+        let currentQuestion = 0;
+        let score = 0;
+        let timer;
+        let timeLeft = 15; // Her soru için 15 saniye
+        
+        // DOM öğelerini seçme
+        const questionElement = document.querySelector('.question');
+        const optionsElement = document.querySelector('.options');
+        const nextButton = document.getElementById('next-btn');
+        const timerElement = document.querySelector('.timer');
+        const quizContainer = document.querySelector('.quiz-container');
+        const categories = document.querySelectorAll('.category');
+        
+        // Kategorilere tıklandığında ilgili soruları yükleme ve arka planı değiştirme
+        categories.forEach(category => {
+            category.addEventListener('click', () => {
+                const selectedCategory = category.getAttribute('data-category');
+                loadQuestions(selectedCategory); // Soruları yükle
+                changeBackground(selectedCategory); // // Arka planı değiştir
+            });
+        });
+
+        // Her kategoriye özel bir arka plan resmini belirle
+        function changeBackground(category) {
+            const quizContainer = document.querySelector('body');
+
+            let backgroundImage;
+
+            switch (category) {
+                case 'bilim':
+                    backgroundImage = 'url("b_bilim.jpg")';
+                    break;
+                case 'spor':
+                    backgroundImage = 'url("b_spor.jpg")';
+                    break;
+                case 'coğrafya':
+                    backgroundImage = 'url("b_cografya.avif")';
+                    break;
+                case 'tarih':
+                    backgroundImage = 'url("b_tarih.jpg")';
+                    break;
+                case 'sanat':
+                    backgroundImage = 'url("b_sanat.jpg")';
+                    break;
+                case 'sinema':
+                    backgroundImage = 'url("b_sinema.jpg")';
+                    break;
+            }
+
+            // Quiz sayfasının arka planını değiştir
+            quizContainer.style.backgroundImage = backgroundImage;
+            quizContainer.style.backgroundSize = 'cover';
+            quizContainer.style.backgroundPosition = 'center';
+        }
+
+        function loadQuestions(category) {
+            fetch('sorular.json') // Veri çekme
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Ağ yanıtı başarılı değil');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Seçilen kategoriye ait soruları al
+                    questions = data[category];
+                    currentQuestion = 0;
+                    score = 0;
+                    quizContainer.style.display = 'block'; // Quiz container'ını göster
+                    document.querySelector('.category-container').style.display = 'none'; // Kategorileri gizle
+                    loadQuestion(); // İlk soruyu yükle
+                })
+                .catch(error => console.error('JSON yüklenirken hata oluştu:', error));
+        }
+
+
+        function loadQuestion() {
+            if (currentQuestion < questions.length) {
+                const questionData = questions[currentQuestion]; // Şu anki soruya ait veriyi al
+                questionElement.textContent = questionData.question; // Soruyu ekrana yazdır
+                optionsElement.innerHTML = ""; // Seçenekleri sıfırlama
+                questionData.options.forEach((option, index) => {
+                    const li = document.createElement('li'); // Her bir seçenek için bir <li> öğesi oluştur
+                    const radioInput = document.createElement('input');
+                    const label = document.createElement('label');
+
+                    radioInput.type = 'radio';
+                    radioInput.name = 'option'; // Bu radio butonlarının hepsi aynı name'e sahip olmalı, böylece yalnızca bir tanesi seçilebilir
+                    radioInput.id = `option${index}`; // Radyo butonlarına benzersiz id'ler veriyoruz
+                    radioInput.value = index; // Her radyo butonunun value'sini, bu seçeneğin sırası olan index ile belirlenir
+
+                    label.htmlFor = `option${index}`; // Etiketin htmlFor özelliğini, radyo butonunun id'sine eşit yapar
+                    label.textContent = option;  // Etiketin içeriğini, seçeneğin metniyle ayarlar
+
+                    li.appendChild(radioInput); // <li> öğesinin içine önce radio input'u ekliyoruz
+                    li.appendChild(label); // Sonra etiketi ekliyoruz
+                    optionsElement.appendChild(li); // <li> öğesini, seçenekler listesine (optionsElement) ekliyoruz
+                });
+                startTimer();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            let title;
+            if (score <= 3) {
+                title = 'ACEMİ';
+            } else if (score <= 7) {
+                title = 'ORTA';
+            } else {
+                title = 'BİLGE';
+            }
+            questionElement.textContent = `Quiz Bitti! Skorunuz: ${score}/${questions.length} - Seviye: ${title}`;
+            optionsElement.innerHTML = "";
+            nextButton.style.display = "none";
+            timerElement.style.display = "none";
+        }
+
+        function startTimer() {
+            timeLeft = 15; // Her soru için 15 saniye
+            updateTimerDisplay(); // Zamanlayıcıyı günceller
+            timer = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay(); // Zamanlayıcıyı her saniye günceller
+                if (timeLeft <= 0) {
+                    clearPreviousTimer(); 
+                    checkAnswer(); // Zaman bitiminde cevabı kontrol et
+                    currentQuestion++;
+                    loadQuestion();
+                }
+            }, 1000);
+        }
+        
+        // Zamanlayıcıyı güncelleme fonksiyonu
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60); // Dakika hesapla
+            const seconds = timeLeft % 60; // Saniye hesapla
+            timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+        
+        // Önceki zamanlayıcıyı temizleme fonksiyonu
+        function clearPreviousTimer() {
+            if (timer) {
+                clearInterval(timer); // Eğer bir zamanlayıcı varsa durdur
+            }
+        }
+
+        function checkAnswer() {
+            const selectedOption = document.querySelector('input[name="option"]:checked'); // Seçilen seçeneği al
+
+            // Seçim yapılmışsa
+            if (selectedOption) {
+                const selectedIndex = parseInt(selectedOption.value, 10);
+
+                // Tüm seçenekleri al
+                const options = document.querySelectorAll('.options li');
+
+                // Doğru cevabı renklendir
+                options.forEach((option, index) => {
+                    if (index === questions[currentQuestion].answer) {
+                        option.style.backgroundColor = 'green'; // Doğru cevap yeşil
+                        option.style.color = 'white'; // Yazıyı da okunabilir yap
+                    }
+                });
+
+                // Yanlış cevabı renklendir
+                if (selectedIndex !== questions[currentQuestion].answer) {
+                    const selectedLi = selectedOption.parentElement;
+                    selectedLi.style.backgroundColor = 'red'; // Yanlış cevap kırmızı
+                    selectedLi.style.color = 'white'; // Yazıyı da okunabilir yap
+                } else {
+                    // Doğru cevabı verdiyse skor artır
+                    score++;
+                }
+            } else {
+                // Eğer seçenek seçilmediyse, doğru cevabı renklendir
+                const options = document.querySelectorAll('.options li');
+                options.forEach((option, index) => {
+                    if (index === questions[currentQuestion].answer) {
+                        option.style.backgroundColor = 'green'; // Doğru cevap yeşil
+                        option.style.color = 'white'; // Yazıyı da okunabilir yap
+                    }
+                });
+            }
+
+            // Seçenekleri devre dışı bırak
+            document.querySelectorAll('input[name="option"]').forEach(input => {
+                input.disabled = true;
+            });
+        }
+
+        nextButton.addEventListener('click', () => {
+            clearPreviousTimer();
+            checkAnswer(); // Kullanıcı "Sonraki" butonuna bastığında cevabı kontrol et
+  
+            setTimeout(() => {
+                currentQuestion++;
+                loadQuestion(); // 2 saniye sonra yeni soruyu yükl
+            }, 2000); // 2 saniye cevapların renklerini göster
+
+        });
+
+    </script>
+</body>
+
+</html>

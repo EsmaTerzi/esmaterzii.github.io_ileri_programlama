@@ -1,0 +1,614 @@
+{
+    "bilim": [
+        {
+            "question": "Hangi gezegen Güneş Sistemi'ndeki en büyük gezegendir?",
+            "options": [
+                "Satürn",
+                "Jüpiter",
+                "Dünya",
+                "Venüs"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Hangi elementin sembolü 'O'dur?",
+            "options": [
+                "Azot",
+                "Altın",
+                "Gümüş",
+                "Oksijen"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Işık hızının yaklaşık değeri nedir?",
+            "options": [
+                "300,000 km/s",
+                "150,000 km/s",
+                "1,080,000 km/s",
+                "100,000 km/s"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Hücrenin enerji üretiminden sorumlu organeli hangisidir?",
+            "options": [
+                "Mitokondri",
+                "Ribozom",
+                "Golgi Cisimciği",
+                "Lizosom"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "DNA'nın yapı taşı nedir?",
+            "options": [
+                "Protein",
+                "Nükleotid",
+                "Karbonhidrat",
+                "Lipit"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Evrenin genişlediğini kim keşfetmiştir?",
+            "options": [
+                "Edwin Hubble",
+                "Isaac Newton",
+                "Galileo Galilei",
+                "Albert Einstein"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Yer çekimi kuvveti ilk kez kim tarafından tanımlanmıştır?",
+            "options": [
+                "Galileo Galilei",
+                "Albert Einstein",
+                "Isaac Newton",
+                "Nikola Tesla"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Hangi tür bağ, su moleküllerinin birbirine bağlanmasını sağlar?",
+            "options": [
+                "Metal Bağı",
+                "Kovalent Bağ",
+                "İyonik Bağ",
+                "Hidrojen Bağı"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Hangi gaz atmosferin büyük bir kısmını oluşturur?",
+            "options": [
+                "Oksijen",
+                "Azot",
+                "Karbondioksit",
+                "Helyum"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Evrenin yaklaşık yaşı nedir?",
+            "options": [
+                "13.8 milyar yıl",
+                "10 milyar yıl",
+                "4.5 milyar yıl",
+                "7.5 milyar yıl"
+            ],
+            "answer": 0
+        }
+    ],
+    "spor": [
+        {
+            "question": "Futbolun en prestijli turnuvası nedir?",
+            "options": [
+                "FIFA Dünya Kupası",
+                "Şampiyonlar Ligi",
+                "Premier League",
+                "La Liga"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "NBA takımlarından biri hangisidir?",
+            "options": [
+                "Los Angeles Lakers",
+                "Dallas Mavericks",
+                "Miami Heat",
+                "Hepsi"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Teniste 'Grand Slam' turnuvalarından biri hangisidir?",
+            "options": [
+                "Wimbledon",
+                "Roland Garros",
+                "US Open",
+                "Hepsi"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Hangi spor dalında 'smash' terimi kullanılır?",
+            "options": [
+                "Badminton",
+                "Voleybol",
+                "Tenis",
+                "Hepsi"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Olimpiyat Oyunları kaç yılda bir düzenlenir?",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Formula 1'de araçların pit stop alanında yaptığı lastik değişimi süresi genellikle kaç saniyedir?",
+            "options": [
+                "5-6 saniye",
+                "2-3 saniye",
+                "10-12 saniye",
+                "15-20 saniye"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Messi'nin uzun yıllar boyunca oynadığı kulüp hangisidir?",
+            "options": [
+                "Barcelona",
+                "Real Madrid",
+                "Paris Saint-Germain",
+                "Manchester United"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Maraton koşusunun resmi uzunluğu nedir?",
+            "options": [
+                "42.195 km",
+                "40.000 km",
+                "50.000 km",
+                "45.195 km"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Futbolda hangi pozisyon kaleyi korumakla sorumludur?",
+            "options": [
+                "Forvet",
+                "Defans",
+                "Orta saha",
+                "Kaleci"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Basketbolda 'triple-double' neyi ifade eder?",
+            "options": [
+                "Bir oyuncunun 3 istatistikte çift hanelere ulaşması",
+                "Bir oyuncunun 3 sayı çizgisinden 10 isabet bulması",
+                "Bir oyuncunun maçta 3 faul yapması",
+                "Bir oyuncunun 10 sayı atıp maç kazanması"
+            ],
+            "answer": 0
+        }
+    ],
+    "coğrafya": [
+        {
+            "question": "En büyük okyanus hangisidir?",
+            "options": [
+                "Atlas Okyanusu",
+                "Hint Okyanusu",
+                "Pasifik Okyanusu",
+                "Arktik Okyanusu"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Dünyanın en yüksek dağı hangisidir?",
+            "options": [
+                "K2",
+                "Everest",
+                "Kilimanjaro",
+                "Elbruz"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Japonya'nın başkenti neresidir?",
+            "options": [
+                "Pekin",
+                "Disney",
+                "Tokyo",
+                "Delhi"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Afrika kıtasının en uzun nehri hangisidir?",
+            "options": [
+                "Amazon Nehri",
+                "Nil Nehri",
+                "Kongo Nehri",
+                "Zambezi Nehri"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Avrupa kıtasında bulunan en büyük ülke hangisidir?",
+            "options": [
+                "Fransa",
+                "Almanya",
+                "Rusya",
+                "İspanya"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Hangi ülke tamamen bir ada üzerinde yer alır?",
+            "options": [
+                "Avustralya",
+                "Japonya",
+                "Madagaskar",
+                "Hepsi"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Dünya üzerindeki en büyük çöl hangisidir?",
+            "options": [
+                "Gobi Çölü",
+                "Sahra Çölü",
+                "Kalahari Çölü",
+                "Atakama Çölü"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Ekvator hangi kıtaların üzerinden geçer?",
+            "options": [
+                "Afrika, Asya, Güney Amerika",
+                "Afrika, Güney Amerika, Okyanusya",
+                "Afrika, Güney Amerika, Asya",
+                "Afrika, Güney Amerika"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Dünya'nın en uzun nehri hangisidir?",
+            "options": [
+                "Nil Nehri",
+                "Amazon Nehri",
+                "Mississippi Nehri",
+                "Yangtze Nehri"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Hangi kıta hem kuzey hem güney yarımkürede yer alır?",
+            "options": [
+                "Afrika",
+                "Asya",
+                "Avrupa",
+                "Okyanusya"
+            ],
+            "answer": 0
+        }
+    ],
+    "tarih": [
+        {
+            "question": "İstanbul'un fethiyle hangi imparatorluk sona ermiştir?",
+            "options": [
+                "Bizans İmparatorluğu",
+                "Roma İmparatorluğu",
+                "Selçuklu İmparatorluğu",
+                "Moğol İmparatorluğu"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Soğuk Savaş dönemi hangi iki güç arasında yaşanmıştır?",
+            "options": [
+                "ABD ve SSCB",
+                "İngiltere ve Fransa",
+                "Almanya ve Japonya",
+                "Çin ve Hindistan"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Osmanlı Devleti'nin ilk padişahı kimdir?",
+            "options": [
+                "Orhan Gazi",
+                "Osman Gazi",
+                "Yavuz Sultan Selim",
+                "Kanuni Sultan Süleyman"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Rönesans hareketi hangi kıtada başlamıştır?",
+            "options": [
+                "Asya",
+                "Afrika",
+                "Avrupa",
+                "Amerika"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Magna Carta hangi ülkede ilan edilmiştir?",
+            "options": [
+                "Fransa",
+                "İngiltere",
+                "İspanya",
+                "İtalya"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Coğrafi keşiflerin en büyük destekçilerinden biri olan ülke hangisidir?",
+            "options": [
+                "Portekiz",
+                "Almanya",
+                "Rusya",
+                "Hollanda"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Osmanlı Devleti'nde ilk anayasayı hangi padişah yürürlüğe koymuştur?",
+            "options": [
+                "II. Abdülhamid",
+                "III. Selim",
+                "IV. Murad",
+                "Fatih Sultan Mehmet"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Tarihte ilk yazılı antlaşma hangisidir?",
+            "options": [
+                "Kadeş Antlaşması",
+                "Lozan Antlaşması",
+                "Versay Antlaşması",
+                "Berlin Antlaşması"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Hangi uygarlık piramitleriyle ünlüdür?",
+            "options": [
+                "Yunan",
+                "Babil",
+                "Mısır",
+                "Roma"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Troya Antik Kenti hangi bölgede bulunmaktadır?",
+            "options": [
+                "Ege Bölgesi",
+                "Marmara Bölgesi",
+                "Karadeniz Bölgesi",
+                "Doğu Anadolu Bölgesi"
+            ],
+            "answer": 1
+        }
+    ],
+    "sanat": [
+        {
+            "question": "En ünlü heykeltraşlardan biri kimdir?",
+            "options": [
+                "Michelangelo",
+                "Leonardo da Vinci",
+                "Vincent van Gogh",
+                "Pablo Picasso"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Mona Lisa tablosunun ressamı kimdir?",
+            "options": [
+                "Claude Monet",
+                "Salvador Dalí",
+                "Leonardo da Vinci",
+                "Edvard Munch"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Guernica adlı ünlü tablonun ressamı kimdir?",
+            "options": [
+                "Diego Rivera",
+                "Frida Kahlo",
+                "Pablo Picasso",
+                "Andy Warhol"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Van Gogh'un ünlü tablosu 'Yıldızlı Gece' hangi sanat akımına aittir?",
+            "options": [
+                "Ekspresyonizm",
+                "Post-Empresyonizm",
+                "Sürrealizm",
+                "Barok"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Rönesans döneminin önemli bir sanatçısı kimdir?",
+            "options": [
+                "Raphael",
+                "Rembrandt",
+                "Jackson Pollock",
+                "Caravaggio"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Michelangelo'nun yaptığı ünlü heykelin adı nedir?",
+            "options": [
+                "David",
+                "Venüs",
+                "Laocoön",
+                "Diskobolos"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Empresyonizm akımının öncülerinden biri olan Claude Monet'in ünlü tablosu nedir?",
+            "options": [
+                "Venüs'ün Doğuşu",
+                "Gece Devriyesi",
+                "Bağırış",
+                "Nilüferler"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Salvador Dalí'nin ünlü tablosu 'Belleğin Azmi' hangi sanat akımına aittir?",
+            "options": [
+                "Sürrealizm",
+                "Kübizm",
+                "Empresyonizm",
+                "Minimalizm"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Barok dönemin ünlü sanatçılarından biri kimdir?",
+            "options": [
+                "Monet",
+                "Caravaggio",
+                "Van Gogh",
+                "Da Vinci"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Osman Hamdi Bey'in en bilinen eserlerinden biri hangisidir?",
+            "options": [
+                "Mona Lisa",
+                "Kaplumbağa Terbiyecisi",
+                "Guernica",
+                "Venüs'ün Doğuşu"
+            ],
+            "answer": 1
+        }
+    ],
+    "sinema": [
+        {
+            "question": "Hangisi Christopher Nolan'ın yönettiği bir filmdir?",
+            "options": [
+                "Inception",
+                "The Godfather",
+                "Pulp Fiction",
+                "Titanic"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Oscar tarihinde en çok ödül kazanan film hangisidir?",
+            "options": [
+                "Titanic",
+                "Ben-Hur",
+                "The Lord of the Rings: The Return of the King",
+                "Hepsi"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Marvel Sinematik Evreni'nde Iron Man karakterini kim canlandırmıştır?",
+            "options": [
+                "Chris Evans",
+                "Robert Downey Jr.",
+                "Chris Hemsworth",
+                "Mark Ruffalo"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Pixar'ın ilk animasyon filmi hangisidir?",
+            "options": [
+                "Finding Nemo",
+                "Monsters, Inc.",
+                "Toy Story",
+                "Up"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "En uzun süreli James Bond oyuncusu kimdir?",
+            "options": [
+                "Sean Connery",
+                "Roger Moore",
+                "Daniel Craig",
+                "Pierce Brosnan"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Hangisi Alfred Hitchcock'un bir filmidir?",
+            "options": [
+                "Psycho",
+                "Rear Window",
+                "The Birds",
+                "Hepsi"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Matrix serisinde Neo karakterini kim canlandırmıştır?",
+            "options": [
+                "Keanu Reeves",
+                "Hugo Weaving",
+                "Laurence Fishburne",
+                "Matt Damon"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "Hangisi Quentin Tarantino'nun yönettiği bir filmdir?",
+            "options": [
+                "Pulp Fiction",
+                "Kill Bill",
+                "Django Unchained",
+                "Hepsi"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Hangisi Disney'in bir animasyon filmidir?",
+            "options": [
+                "The Lion King",
+                "Frozen",
+                "Beauty and the Beast",
+                "Hepsi"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Star Wars evreninde Jedi Ustası kimdir?",
+            "options": [
+                "Yoda",
+                "Darth Vader",
+                "Obi-Wan Kenobi",
+                "Anakin Skywalker"
+            ],
+            "answer": 0
+        }
+    ]
+}
